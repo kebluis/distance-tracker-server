@@ -4,11 +4,14 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoute = require("./routes/authRoute");
 const requireAuth = require("./middlewares/requireAuth");
+const dotenv = require('dotenv');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoute);
+
+dotenv.config();
 
 const mongoUri = process.env.MONGO_URI;
 
