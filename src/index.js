@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(authRoute);
 
-const mongoUri = MONGO_URI;
+const mongoUri = process.env.MONGO_URI;
 
 mongoose.connect(mongoUri);
 
