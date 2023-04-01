@@ -1,8 +1,10 @@
 require("./models/User");
+require("./models/Track");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoute = require("./routes/authRoute");
+const trackRoute = require("./routes/trackRoute");
 const requireAuth = require("./middlewares/requireAuth");
 const dotenv = require('dotenv');
 
@@ -10,6 +12,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoute);
+app.use(trackRoute);
 
 dotenv.config();
 
